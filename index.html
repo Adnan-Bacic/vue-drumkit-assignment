@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue music</title>
+
+    <!--Vue link-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="app" v-bind:class="{ darkThemeMode: darkMode }">
+        <h1>{{ introText }}</h1>
+
+        <!--shows name after input. shows drumkit after keypress-->
+        <input type="text" v-model="name" v-on:keypress="showHidden" placeholder="Name">
+        <br>
+        
+        <p><span v-bind:class="{ hidden: isHidden }">Welcome</span> {{ name }}</p>
+        <button v-bind:class="{ hidden: isHidden }" v-on:click="toggleTheme">{{ darkModeBtnText }}</button>
+        <p v-bind:class="{ hidden: isHidden }">Play music by clicking an image or use the numbers 1-7</p>
+        <p v-bind:class="classesForMobile" v-if="mobileScreen">{{ mobileScreen }}</p>
+        <!--
+            <input type="text" v-on:keypress="logInfo" placeholder="log info">
+        -->
+        
+        <hr>
+        <div v-bind:class="{ hidden: isHidden }">
+            <img v-on:click="playSound('1')" src="drumkit_images-and-sounds/images/crash.png">
+            <img v-on:click="playSound('2')" src="drumkit_images-and-sounds/images/kick.png">
+            <img v-on:click="playSound('3')" src="drumkit_images-and-sounds/images/snare.png">
+            <img v-on:click="playSound('4')" src="drumkit_images-and-sounds/images/tom1.png">
+            <img v-on:click="playSound('5')" src="drumkit_images-and-sounds/images/tom2.png">
+            <img v-on:click="playSound('6')" src="drumkit_images-and-sounds/images/tom3.png">
+            <img v-on:click="playSound('7')" src="drumkit_images-and-sounds/images/tom4.png">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

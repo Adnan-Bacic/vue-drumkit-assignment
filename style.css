@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Helvetica';
+}
+#app{
+    padding: 20px;
+}
+h1{
+    margin-bottom: 10px;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+input{
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    padding: 5px 0px 5px 5px;
+}
+button{
+    color: white;
+    background-color: #c143d8;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 50px 20px 50px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+/*class for hiding elements*/
+.hidden{
+    display: none;
+}
+/*dark theme css*/
+.darkThemeMode{
+    background-color: #121212;
+    color: white;
+}
+.warningText{
+    color: red;
+    font-weight: bold;
+}
+@media screen and (max-width: 480px) {
+    img{
+        width: 30%;
+    }
+}
